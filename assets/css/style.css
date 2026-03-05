@@ -143,7 +143,7 @@ p  { color: var(--text-muted); line-height: 1.8; font-size: 1rem; }
   height: 72px; gap: 1rem;
 }
 
-/* Logo — proper display handling */
+/* Logo — keep original design */
 .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
 .nav-logo img {
   height: 44px;
@@ -152,8 +152,6 @@ p  { color: var(--text-muted); line-height: 1.8; font-size: 1rem; }
   object-fit: contain;
   display: block;
   flex-shrink: 0;
-  /* Fix for logos with transparency issues */
-  image-rendering: -webkit-optimize-contrast;
 }
 .mobile-nav-logo { display: flex; align-items: center; }
 .mobile-nav-logo img {
@@ -162,7 +160,6 @@ p  { color: var(--text-muted); line-height: 1.8; font-size: 1rem; }
   max-width: 140px;
   object-fit: contain;
   display: block;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 .nav-links {
