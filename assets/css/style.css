@@ -494,7 +494,7 @@ section { padding: 96px 0; }
   max-width: 88vw;
   background: #ffffff;
   z-index: 9999;
-  display: flex;
+  display: none; /* Hidden by default on all devices */
   flex-direction: column;
   transform: translateX(110%);
   transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
@@ -503,10 +503,19 @@ section { padding: 96px 0; }
   overscroll-behavior: contain;
   pointer-events: none;
   will-change: transform;
+  visibility: hidden;
 }
-.mobile-nav.open {
-  transform: translateX(0);
-  pointer-events: all;
+
+/* Show mobile nav only on mobile screens */
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: flex;
+  }
+  .mobile-nav.open {
+    transform: translateX(0);
+    pointer-events: all;
+    visibility: visible;
+  }
 }
 
 /* Backdrop */
@@ -520,11 +529,18 @@ section { padding: 96px 0; }
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.32s ease, visibility 0.32s ease;
+  display: none; /* Hidden by default */
 }
-.mobile-nav-backdrop.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+
+@media (max-width: 768px) {
+  .mobile-nav-backdrop {
+    display: block;
+  }
+  .mobile-nav-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
 }
 
 /* Drawer header */
