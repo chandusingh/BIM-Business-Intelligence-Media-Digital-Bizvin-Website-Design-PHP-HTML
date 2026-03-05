@@ -27,7 +27,6 @@
     <div class="footer-grid">
 
       <div class="footer-brand">
-        <img src="assets/images/logo.png" alt="BIM Digital" />
         <p>BIM Digital is a global Business Intelligence and Strategic Marketing firm empowering SMEs with enterprise-grade intelligence and market execution capabilities.</p>
       </div>
 
