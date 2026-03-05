@@ -732,6 +732,16 @@ section { padding: 96px 0; }
 /* ── Desktop: always hide hamburger and mobile nav ── */
 @media (min-width: 769px) {
   .hamburger { display: none !important; }
-  .mobile-nav { display: none !important; }
-  .mobile-nav-backdrop { display: none !important; }
+  .mobile-nav { 
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  .mobile-nav-backdrop { 
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
