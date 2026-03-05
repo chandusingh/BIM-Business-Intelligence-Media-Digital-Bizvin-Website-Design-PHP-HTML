@@ -686,6 +686,24 @@ section { padding: 96px 0; }
 @media (max-width: 768px) {
   .nav-links { display: none !important; }
   .hamburger { display: flex; }
+  
+  /* Ensure mobile nav is hidden by default */
+  .mobile-nav {
+    display: flex;
+    transform: translateX(110%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .mobile-nav.open {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+  }
+  .mobile-nav-backdrop {
+    display: block;
+  }
 
   section     { padding: 64px 0; }
   .page-hero  { padding: 120px 0 56px; }
