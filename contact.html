@@ -284,28 +284,61 @@
 </section>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   
+  const submitBtn = this.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.innerHTML;
+  
   // Get form values
-  var name = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var message = document.getElementById('message').value;
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value || '',
+    company: document.getElementById('company').value || '',
+    service: document.getElementById('service').value || '',
+    message: document.getElementById('message').value
+  };
   
   // Simple validation
-  if (!name || !email || !message) {
+  if (!formData.name || !formData.email || !formData.message) {
     alert('Please fill in all required fields.');
     return;
   }
   
-  // Show success message
-  document.getElementById('formSuccess').style.display = 'block';
+  // Show loading state
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = 'Sending... <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-dasharray="60" stroke-dashoffset="0"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></circle></svg>';
   
-  // Clear form
-  this.reset();
-  
-  // Scroll to success message
-  document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
+    
+    const result = await response.json();
+    
+    if (response.ok && result.success) {
+      // Show success message
+      document.getElementById('formSuccess').style.display = 'block';
+      // Clear form
+      this.reset();
+      // Scroll to success message
+      document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      alert(result.detail || 'Failed to send message. Please try again or contact us directly.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Failed to send message. Please try again or contact us directly at akhileshs@bimdigital.in');
+  } finally {
+    // Restore button
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnText;
+  }
 });
 </script>
 
