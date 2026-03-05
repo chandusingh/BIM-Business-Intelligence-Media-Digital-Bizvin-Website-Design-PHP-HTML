@@ -6,56 +6,56 @@ Convert PHP-based website for BIM Digital to HTML with fixes:
 - Logo showing issue - keep original design without CSS modifications
 - Remove logo from footer
 - Make all device responsive
+- Make contact form work with SMTP
 
 ## Architecture
-- **Technology**: Static HTML website (converted from PHP)
+- **Technology**: Static HTML + FastAPI Backend for contact form
 - **Files Structure**:
   - `index.html` - Home page
   - `about.html` - About page
   - `services.html` - Services page
-  - `contact.html` - Contact page (form with JS validation)
+  - `contact.html` - Contact page with working form
   - `assets/css/style.css` - Main stylesheet
-  - `assets/images/logo.png` - Logo image (cyan BIM logo with transparent background)
+  - `/logo.jpg` - Logo image (in public folder)
+  - `backend/server.py` - FastAPI server for contact form
 
 ## What's Been Implemented (Jan 2026)
 
 ### Conversion & Fixes Completed:
 1. **PHP to HTML Conversion**: 
    - All 4 pages converted from PHP to static HTML
-   - PHP includes replaced with inline HTML
-   - PHP variables replaced with static content
    - Dynamic year in footer using JavaScript
-   - Contact form now uses JavaScript validation (no backend)
 
-2. **Footer Logo Removed**: 
-   - Replaced with text heading "BIM Digital" styled in white
+2. **Contact Form Working with SMTP**:
+   - Backend API at `/api/contact`
+   - SMTP: Google Workspace (smtp.gmail.com:587 TLS)
+   - Sends notification email to akhileshs@bimdigital.in
+   - Sends auto-reply to user
 
-3. **Mobile Navigation Fixed**:
-   - Fixed mobile nav drawer with proper CSS positioning
-   - Added `position: fixed !important` with explicit positioning
-   - Added `visibility: hidden` and `opacity: 0` for complete hiding
-   - Mobile nav only visible when `.open` class is added via JavaScript
+3. **Logo Updated**:
+   - Path changed to `/logo.jpg`
+   - All pages updated
 
-4. **Logo CSS Cleaned**:
-   - No filter/blend-mode modifications
-   - Logo displays in original design
+4. **Email Updated**:
+   - All emails changed to akhileshs@bimdigital.in
 
-5. **Responsive Design**:
-   - Breakpoints: 1280px, 1100px, 960px, 768px, 540px, 380px
-   - All layouts adapt properly across devices
+5. **Footer Logo Removed**: 
+   - Replaced with text heading "BIM Digital"
 
-## Files Created:
-- `/app/index.html`
-- `/app/about.html`
-- `/app/services.html`
-- `/app/contact.html`
-- `/app/assets/css/style.css` (updated)
+6. **Mobile Navigation Fixed**:
+   - CSS properly hides drawer until opened
 
-## Notes:
-- Contact form shows success message but doesn't send emails (static HTML)
-- For actual form submission, integrate with a service like Formspree, Netlify Forms, or similar
-- Logo kept original - no CSS filters applied
+## SMTP Configuration:
+- Host: smtp.gmail.com
+- Port: 587
+- Encryption: TLS
+- Username: akhileshs@bimdigital.in
+
+## Files:
+- `/app/index.html`, `/app/about.html`, `/app/services.html`, `/app/contact.html`
+- `/app/backend/server.py` - Contact form API
+- `/app/assets/css/style.css`
 
 ## Next Action Items:
-- Deploy to static hosting (GitHub Pages, Netlify, Vercel, etc.)
-- Add form backend service if email submission needed
+- Upload logo.jpg to public folder
+- Deploy to hosting
