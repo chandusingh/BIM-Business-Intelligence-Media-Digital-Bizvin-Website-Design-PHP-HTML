@@ -737,10 +737,9 @@ section { padding: 96px 0; }
   .badge { font-size: 0.68rem; padding: 5px 10px; }
 }
 
-/* ── Desktop: always hide hamburger ── */
+/* ── Desktop: always hide hamburger and mobile nav ── */
 @media (min-width: 769px) {
   .hamburger { display: none !important; }
-  /* Ensure mobile nav never shows on desktop even if .open is set */
   .mobile-nav { display: none !important; }
   .mobile-nav-backdrop { display: none !important; }
 }
