@@ -16,7 +16,7 @@ include 'header.php';
         <span class="badge">Business Intelligence Media</span>
       </div>
       <h1>Driving <em>Intelligent Growth</em> for Ambitious Businesses Worldwide</h1>
-      <p>BIM Digital is a global Business Intelligence and Strategic Marketing firm dedicated to empowering small and mid-sized enterprises with enterprise-grade intelligence and market execution capabilities.</p>
+      <p class="hero-desc">BIM Digital is a global Business Intelligence and Strategic Marketing firm dedicated to empowering small and mid-sized enterprises with enterprise-grade intelligence and market execution capabilities.</p>
       <div class="hero-actions">
         <a href="contact.php" class="btn btn-primary">
           Start Your Journey
@@ -116,7 +116,7 @@ include 'header.php';
 ══════════════════════════════════════════ -->
 <section style="background:var(--white);">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;" class="why-grid">
       <div>
         <span class="badge" style="margin-bottom:1.5rem;">Why BIM Digital</span>
         <h2 style="margin-bottom:1rem;">Growth That Is Structured & Measurable</h2>

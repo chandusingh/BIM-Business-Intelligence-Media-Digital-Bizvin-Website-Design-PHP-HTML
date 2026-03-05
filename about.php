@@ -86,7 +86,7 @@ include 'header.php';
       <p>Every engagement begins with a deep diagnostic analysis of market position, customer landscape, revenue model, and operational efficiency.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;" class="process-grid">
       <?php
       $steps = [
         ['01', 'Deep Diagnostic', 'We analyze your market position, customer landscape, revenue model, and operational efficiency before recommending anything.'],
@@ -110,7 +110,7 @@ include 'header.php';
 ══════════════════════════════════════════ -->
 <section style="background:var(--white);">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;" class="why-grid">
       <div>
         <span class="badge" style="margin-bottom:1.5rem;">Core Principles</span>
         <h2 style="margin-bottom:1.25rem;">The Values Behind Our Work</h2>

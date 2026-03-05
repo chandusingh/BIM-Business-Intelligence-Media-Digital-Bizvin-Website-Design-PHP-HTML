@@ -54,8 +54,8 @@
       <div class="footer-col">
         <h5>Connect</h5>
         <ul>
-          <li><a href="mailto:info@bimdigital.com">info@bimdigital.com</a></li>
-          <li><a href="http://www.bimdigital.com" target="_blank">www.bimdigital.com</a></li>
+          <li><a href="mailto:info@bimdigital.in">info@bimdigital.in</a></li>
+          <li><a href="http://www.bimdigital.in" target="_blank">www.bimdigital.in</a></li>
           <li><a href="contact.php">LinkedIn</a></li>
           <li><a href="contact.php">Schedule a Call</a></li>
         </ul>

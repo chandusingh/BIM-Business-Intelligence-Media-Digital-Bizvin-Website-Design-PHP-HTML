@@ -103,7 +103,7 @@ include 'header.php';
       <p>Our engagement model is structured to deliver intelligence at every stage of your growth journey.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;" class="process-grid">
       <!-- connector line -->
       <div style="position:absolute;top:36px;left:calc(12.5% + 1rem);right:calc(12.5% + 1rem);height:2px;background:linear-gradient(90deg,var(--cyan),var(--cyan-dark));opacity:0.3;pointer-events:none;"></div>
 
