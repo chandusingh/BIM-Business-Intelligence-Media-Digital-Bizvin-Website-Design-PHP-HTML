@@ -1,53 +1,61 @@
 # BIM Digital Website - PRD
 
 ## Original Problem Statement
-PHP-based website for BIM Digital with the following issues to fix:
+Convert PHP-based website for BIM Digital to HTML with fixes:
 - Header not showing properly (mobile menu items appearing outside drawer)
 - Logo showing issue - keep original design without CSS modifications
 - Remove logo from footer
 - Make all device responsive
 
 ## Architecture
-- **Technology**: PHP-based static website
+- **Technology**: Static HTML website (converted from PHP)
 - **Files Structure**:
-  - `header.php` - Shared header component with navigation
-  - `footer.php` - Shared footer component
-  - `index.php`, `about.php`, `services.php`, `contact.php` - Main pages
+  - `index.html` - Home page
+  - `about.html` - About page
+  - `services.html` - Services page
+  - `contact.html` - Contact page (form with JS validation)
   - `assets/css/style.css` - Main stylesheet
   - `assets/images/logo.png` - Logo image (cyan BIM logo with transparent background)
 
 ## What's Been Implemented (Jan 2026)
 
-### Bug Fixes Completed:
-1. **Footer Logo Removed**: 
-   - Removed the `<img>` logo from footer
+### Conversion & Fixes Completed:
+1. **PHP to HTML Conversion**: 
+   - All 4 pages converted from PHP to static HTML
+   - PHP includes replaced with inline HTML
+   - PHP variables replaced with static content
+   - Dynamic year in footer using JavaScript
+   - Contact form now uses JavaScript validation (no backend)
+
+2. **Footer Logo Removed**: 
    - Replaced with text heading "BIM Digital" styled in white
 
-2. **Mobile Navigation Fixed (v2)**:
-   - Fixed mobile nav drawer - menu items were appearing outside the drawer
+3. **Mobile Navigation Fixed**:
+   - Fixed mobile nav drawer with proper CSS positioning
    - Added `position: fixed !important` with explicit positioning
    - Added `visibility: hidden` and `opacity: 0` for complete hiding
-   - Mobile nav only becomes visible when `.open` class is added via JavaScript
-   - Desktop: completely hidden with `display: none !important`
+   - Mobile nav only visible when `.open` class is added via JavaScript
 
-3. **Logo CSS Cleaned**:
-   - Removed all filter/blend-mode modifications
+4. **Logo CSS Cleaned**:
+   - No filter/blend-mode modifications
    - Logo displays in original design
 
-4. **Responsive Design**:
+5. **Responsive Design**:
    - Breakpoints: 1280px, 1100px, 960px, 768px, 540px, 380px
-   - Footer grid adapts from 4-col to 2-col to 1-col
-   - Hero, features, forms all stack properly on mobile
+   - All layouts adapt properly across devices
 
-## Files Modified:
-- `/app/footer.php` - Removed logo, added h4 text
-- `/app/assets/css/style.css` - Fixed mobile nav positioning, cleaned logo styles
+## Files Created:
+- `/app/index.html`
+- `/app/about.html`
+- `/app/services.html`
+- `/app/contact.html`
+- `/app/assets/css/style.css` (updated)
 
 ## Notes:
+- Contact form shows success message but doesn't send emails (static HTML)
+- For actual form submission, integrate with a service like Formspree, Netlify Forms, or similar
 - Logo kept original - no CSS filters applied
-- No testing performed as per user request
-- Site requires PHP server to run
 
 ## Next Action Items:
-- Deploy to PHP hosting environment
-- Test on actual devices to verify responsive fixes
+- Deploy to static hosting (GitHub Pages, Netlify, Vercel, etc.)
+- Add form backend service if email submission needed
